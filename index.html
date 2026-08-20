@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evgeny Chernikov &mdash; Engineering Solutions &amp; Tech Operations</title>
+<meta name="description" content="Evgeny Chernikov — I build engineering solutions and operate tech businesses. Co-Founder at CAworks, Dubai. Formerly COO of Yango Tech and MD of Yango Deli UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0E0E0E; --grey:#666666; --faint:#9B9B9B;
+  --rule:#DEDEDE; --paper:#FAFAFA; --white:#FFFFFF;
+  --accent:#0E0E0E; --accent-soft:#565656;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans); background:var(--paper); color:var(--ink);
+  font-size:15px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+  background-size:56px 56px; background-position:-1px -1px;
+}
+::selection{background:var(--accent);color:var(--paper)}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--mono)}
+.wrap{max-width:70rem;margin:0 auto;padding:0 2rem;background:var(--paper);
+  box-shadow:1px 0 0 var(--rule),-1px 0 0 var(--rule)}
+@media(max-width:720px){.wrap{padding:0 1.1rem}body{background-size:36px 36px}}
+
+.tb{border-bottom:2px solid var(--ink);padding:1.5rem 0 1rem;display:flex;
+  justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.tb .nm{font-family:var(--mono);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.tb .nm span{color:var(--accent)}
+.tb .lk{display:flex;gap:1.4rem;font-family:var(--mono);font-size:.7rem;
+  letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap}
+.tb .lk a{color:var(--grey);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:.15s}
+.tb .lk a:hover{color:var(--accent);border-color:var(--accent)}
+
+.hero{padding:6rem 0 5rem;border-bottom:1px solid var(--rule)}
+.hero .ref{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:1.6rem}
+.hero h1{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:600;line-height:1.13;
+  letter-spacing:-.025em;max-width:26ch;margin-bottom:1.8rem}
+.hero h1 b{font-weight:700;color:var(--accent)}
+.hero .lede{max-width:44ch;color:var(--grey);font-size:1.02rem}
+.hero .go{margin-top:2.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.hero .go a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--rule);background:var(--white);padding:.7rem 1.2rem;transition:.15s}
+.hero .go a:hover{border-color:var(--ink);color:var(--accent)}
+.hero .go a.pr{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.hero .go a.pr:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+section{padding:4.6rem 0;border-bottom:1px solid var(--rule)}
+.sh{display:flex;align-items:baseline;gap:1.1rem;margin-bottom:2.4rem;
+  padding-bottom:.8rem;border-bottom:1px solid var(--ink)}
+.sh .n{font-family:var(--mono);font-size:.68rem;color:var(--accent);letter-spacing:.14em}
+.sh h2{font-size:.9rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+
+.row{display:grid;grid-template-columns:7.5rem 15rem 1fr;gap:1.6rem;
+  padding:1.35rem 0;border-bottom:1px solid var(--rule);align-items:start}
+.row:last-child{border-bottom:none}
+.rowl{transition:.15s;margin:0 -1rem;padding-left:1rem;padding-right:1rem}
+.rowl:hover{background:var(--white)}
+.rowl:hover .cn{color:var(--accent)}
+@media(max-width:820px){.row{grid-template-columns:5.6rem 1fr;gap:.5rem 1rem}
+  .row .dc{grid-column:2}}
+.yr{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--faint);padding-top:.28rem;white-space:nowrap}
+.cn{font-weight:600;font-size:1rem;letter-spacing:-.01em;transition:.15s}
+.cnl{font-weight:500;font-size:.95rem}
+.rl{font-size:.78rem;color:var(--grey);margin-top:.22rem}
+.rl.mono{font-size:.68rem;letter-spacing:.04em;color:var(--accent)}
+.dc p{color:var(--grey);font-size:.92rem}
+.tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--rule);padding:.1rem .45rem;color:var(--faint);margin-left:.55rem;vertical-align:middle}
+
+.now-lede{max-width:52ch;color:var(--grey);margin-bottom:2.4rem;font-size:.98rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem}
+@media(max-width:820px){.two{grid-template-columns:1fr;gap:2rem}}
+.two h3{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--ink)}
+.two ul{list-style:none}
+.two li{padding:.62rem 0;border-bottom:1px solid var(--rule);color:var(--grey);
+  font-size:.9rem;display:flex;gap:.7rem}
+.two li::before{content:"\00B7";color:var(--accent);font-weight:700}
+
+.plead{display:block;border:1px solid var(--ink);background:var(--white);
+  padding:2rem;margin-bottom:1.4rem;transition:.15s}
+.plead:hover{background:#0E0E0E;color:var(--paper)}
+.plead:hover .ps{color:#FFFFFF}
+.plead:hover p{color:#B4B4B4}
+.plead:hover h3{color:var(--paper)}
+.ps{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.plead h3{font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:600;letter-spacing:-.02em;
+  line-height:1.2;margin:.7rem 0 .8rem;transition:.15s}
+.plead p{color:var(--grey);max-width:62ch;font-size:.92rem;transition:.15s}
+
+footer{padding:3rem 0 2.4rem}
+.fl{display:flex;gap:1.6rem;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:2.6rem}
+.fl a{border-bottom:1px solid var(--ink);padding-bottom:2px;transition:.15s}
+.fl a:hover{color:var(--accent);border-color:var(--accent)}
+.col{border-top:2px solid var(--ink);padding-top:1rem;display:flex;justify-content:space-between;
+  gap:.8rem;flex-wrap:wrap;font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="tb">
+  <div class="nm">Evgeny <span>Chernikov</span></div>
+  <div class="lk">
+    <span>Dubai &middot; UAE</span>
+    <a href="mailto:evgeny@chernikov.tech">evgeny@chernikov.tech</a>
+    <a href="https://www.linkedin.com/in/evgenychernikov" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    <a href="https://www.instagram.com/evgeny_chernikov" target="_blank" rel="noopener">Instagram &#8599;</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="ref">00 &mdash; Profile</div>
+  <h1>I build <b>engineering</b> solutions and operate <b>tech</b> businesses.</h1>
+  <p class="lede">Today: CAworks &mdash; bespoke staircases and architectural glass, engineered
+  and fabricated in Dubai. Before that: COO of Yango Tech, and Managing Director of
+  Yango Deli UK in London.</p>
+  <div class="go">
+    <a class="pr" href="#now">What I do now</a>
+    <a href="#experience">Experience</a>
+    <a href="#press">Press</a>
+    <a href="https://caworks.co" target="_blank" rel="noopener">CAworks &#8599;</a>
+  </div>
+</div>
+
+<section id="now">
+  <div class="sh"><span class="n">01</span><h2>Now &mdash; CAworks, Dubai</h2></div>
+  <p class="now-lede">Co-Founder at CAworks Designer Glass Trading, Al Quoz.
+  Helical and floating staircases, structural glass balustrades, walk-on floors and art glass &mdash;
+  engineered, fabricated and installed by our own team, running on a digital stack I build myself.</p>
+  <div class="two">
+    <div><h3>Craft</h3><ul>
+<li>Helical &amp; cantilever staircase engineering — structural analysis, DDA submissions, authority approvals</li>
+<li>3D laser scan to SolidWorks pipeline — survey, model, fabricate to millimetre tolerances</li>
+<li>International procurement — fabrication sourcing and QA across China, Europe and the Gulf</li>
+<li>Specialist glass — low-iron, laminated, bronze-mesh interlayers, ceramic printing, curved</li>
+    </ul></div>
+    <div><h3>Operating system</h3><ul>
+<li>Client handover portal — snags, certificates, OTP access</li>
+<li>Labour hours &amp; pay portal — full field-crew payroll and WPS settlements</li>
+<li>3D configurators and model viewers for clients and supplier RFPs</li>
+<li>Xero-integrated finance ops, AI-assisted shop drawings and cutting lists</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sh"><span class="n">02</span><h2>Experience</h2></div>
+      <div class="row">
+        <div class="yr">2025 —</div>
+        <div class="co"><div class="cn">CAworks</div><div class="rl">Co-Founder &middot; Dubai</div></div>
+        <div class="dc"><p>Engineering bespoke staircases and decorative glass fitouts. A world-class team bringing architectural vision, modern technology and traditional craftsmanship to the Middle East — with proven product fit in the UK's high-end residential and premium hotel markets, now set up in Dubai to go after the GCC opportunity.</p></div>
+      </div>
+      <div class="row">
+        <div class="yr">2023 — 2026</div>
+        <div class="co"><div class="cn">Yango Tech</div><div class="rl">Chief Operating Officer · Dubai</div></div>
+        <div class="dc"><p>A global technology company within the Yango Group, equipping businesses and governments with AI-driven solutions across government and financial services, enterprise and retail. Drove international expansion and operations across Africa, MENA, LATAM and Asia — government relations, strategic partnerships and go-to-market for national-scale infrastructure.</p></div>
+      </div>
+      <div class="row">
+        <div class="yr">2021 — 2023</div>
+        <div class="co"><div class="cn">Yango Deli UK</div><div class="rl">Managing Director · London</div></div>
+        <div class="dc"><p>Launched ultrafast grocery delivery in London for NASDAQ-listed Yandex — five dark stores, 7,000 SKUs, 15-minute delivery. Built the UK operation from zero in one of the most competitive quick-commerce markets at the time, head-to-head with decacorns like Getir, Gorillas, Go-Puff and a handful of other smaller players. Gained sensible market share prior to pivoting the model to an E-Grocery SaaS business.</p></div>
+      </div>
+      <div class="row">
+        <div class="yr">2015 — 2021</div>
+        <div class="co"><div class="cn">SUN STUDIO .London</div><div class="rl">Co-Founder · London</div></div>
+        <div class="dc"><p>Architectural and interior bespoke glass projects. Designer glass workshop and custom fabrications — the studio whose craft and IP now live on in CAworks Dubai.</p></div>
+      </div>
+      <div class="row">
+        <div class="yr">2011 —</div>
+        <div class="co"><div class="cn">RISMART LTD</div><div class="rl">Owner · London</div></div>
+        <div class="dc"><p>Consulting and materials trading.</p></div>
+      </div>
+      <div class="row">
+        <div class="yr">2008 — 2011</div>
+        <div class="co"><div class="cn">Earlier</div><div class="rl">Stroyneftegaz · Russo-British Chamber of Commerce</div></div>
+        <div class="dc"><p>Projects Director at Stroyneftegaz, Krasnodar — a 16-storey residential building, the gas measuring station shelter on the Russia–Turkey pipeline at the Beregovaya compressor station, and infrastructure for the Azov-City regional development. Earlier, Project Manager at the Russo-British Chamber of Commerce, London. Started on site as a foreman, building technician and concrete worker.</p></div>
+      </div>
+</section>
+
+<section id="press">
+  <div class="sh"><span class="n">03</span><h2>Press</h2></div>
+  <a class="plead" href="https://www.thegrocer.co.uk/analysis-and-features/the-10-most-powerful-people-in-rapid-delivery-and-q-commerce/662483.article" target="_blank" rel="noopener">
+    <div class="ps">The Grocer — Power List</div>
+    <h3>The 10 most powerful people in rapid delivery &amp; q-commerce</h3>
+    <p>Named among the ten most powerful people in UK rapid delivery — alongside Tesco's leadership and the founders of Getir and Gorillas. The profile also noted the glass-making business that came before, and to which I have since returned.</p>
+  </a>
+      <a class="row rowl" href="https://www.cnbc.com/2021/10/14/russias-yandex-launches-rapid-grocery-delivery-service-in-london.html" target="_blank" rel="noopener">
+        <div class="yr mono">CNBC</div>
+        <div class="co" style="grid-column: 2 / -1;"><div class="cn cnl">London's ultra-fast grocery delivery war heats up with Yango Deli's arrival &#8599;</div></div>
+      </a>
+      <a class="row rowl" href="https://www.intellinews.com/tech-giant-yandex-shakes-up-uk-market-with-ultrafast-grocer-yango-deli-228126/" target="_blank" rel="noopener">
+        <div class="yr mono">bne IntelliNews</div>
+        <div class="co" style="grid-column: 2 / -1;"><div class="cn cnl">Exclusive interview — shaking up the UK market with ultrafast grocery &#8599;</div></div>
+      </a>
+      <a class="row rowl" href="https://retailtechinnovationhub.com/home/2021/10/26/interview-evgeny-chernikov-general-manager-yango-deli-uk" target="_blank" rel="noopener">
+        <div class="yr mono">Retail Technology Innovation Hub</div>
+        <div class="co" style="grid-column: 2 / -1;"><div class="cn cnl">Interview: Evgeny Chernikov, Yango Deli UK &#8599;</div></div>
+      </a>
+      <a class="row rowl" href="https://www.thegrocer.co.uk/news/russian-tech-giant-yandex-launches-ultrafast-grocery-delivery-in-london/660799.article" target="_blank" rel="noopener">
+        <div class="yr mono">The Grocer</div>
+        <div class="co" style="grid-column: 2 / -1;"><div class="cn cnl">Yandex launches ultrafast grocery delivery in London with four dark stores &#8599;</div></div>
+      </a>
+</section>
+
+<section id="work">
+  <div class="sh"><span class="n">04</span><h2>Selected work</h2></div>
+      <a class="row rowl" href="https://city-transport.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">01</div>
+        <div class="co"><div class="cn">City Transport by Yango</div><div class="rl mono">city-transport.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>Urban mobility platform concept — ticketing, routing and operations for emerging-market public transport.</p></div>
+      </a>
+      <a class="row rowl" href="https://ultimate-e-grocery-modelling-tool.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">02</div>
+        <div class="co"><div class="cn">E-Grocery Business Model Calculator</div><div class="rl mono">ultimate-e-grocery-modelling-tool.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>A full unit-economics and P&amp;L model for dark-store grocery — built at Yango to size markets, stress-test assumptions and show partners what the business actually does at scale.</p></div>
+      </a>
+      <a class="row rowl" href="https://solutions-onepagers-production.up.railway.app" target="_blank" rel="noopener">
+        <div class="yr">03</div>
+        <div class="co"><div class="cn">Solutions One-Pagers</div><div class="rl mono">solutions-onepagers-production.up.railway.app &#8599;</div></div>
+        <div class="dc"><p>A library of concise solution briefs — one page per product, built for fast decision-making.</p></div>
+      </a>
+      <a class="row rowl" href="https://web-production-f62c9.up.railway.app/framework" target="_blank" rel="noopener">
+        <div class="yr">04</div>
+        <div class="co"><div class="cn">AI Maturity Assessment</div><div class="rl mono">web-production-f62c9.up.railway.app &#8599;</div></div>
+        <div class="dc"><p>A structured framework that scores an organisation's AI readiness and maps the path forward.</p></div>
+      </a>
+</section>
+
+<section id="tools" style="border-bottom:none">
+  <div class="sh"><span class="n">05</span><h2>CAworks digital toolkit</h2></div>
+      <a class="row rowl" href="https://caworks-v4.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">01</div>
+        <div class="co"><div class="cn">CAworks Website</div><div class="rl mono">caworks-v4.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>Portfolio, materials library with low-iron glass comparisons, and a UAE building-code reference for staircase design.</p></div>
+      </a>
+      <a class="row rowl" href="https://stairs.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">02</div>
+        <div class="co"><div class="cn">3D Stairs Configurator</div><div class="rl mono">stairs.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>Configure a staircase in the browser — geometry, materials and finishes — and see it in 3D before a single piece of steel is cut.</p></div>
+      </a>
+      <a class="row rowl" href="https://stair-connections.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">03</div>
+        <div class="co"><div class="cn">Stair Connections</div><div class="rl mono">stair-connections.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>Interactive engineering detail viewer — pipe connection design for a helical staircase, reviewable in the browser.</p></div>
+      </a>
+      <a class="row rowl" href="https://step-model.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">04</div>
+        <div class="co"><div class="cn">Interactive 3D Step Model</div><div class="rl mono">step-model.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>Browser-based 3D viewer of an engineered timber box-step assembly, with explode and lift controls — linked from supplier RFPs so fabricators inspect exact geometry.</p></div>
+      </a>
+      <a class="row rowl" href="https://handover.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">05</div>
+        <div class="co"><div class="cn">Handover Portal<span class="tag">Client access</span></div><div class="rl mono">handover.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>Progress tracking and project handover — snag lists, completion certificates and OTP-secured sign-off.</p></div>
+      </a>
+      <a class="row rowl" href="https://pay.chernikov.tech" target="_blank" rel="noopener">
+        <div class="yr">06</div>
+        <div class="co"><div class="cn">Labour Hours &amp; Pay Portal<span class="tag">Internal</span></div><div class="rl mono">pay.chernikov.tech &#8599;</div></div>
+        <div class="dc"><p>Full payroll engine for the field crew — timeclock imports, approvals, loans and WPS-compliant monthly settlements.</p></div>
+      </a>
+</section>
+
+<footer>
+  <div class="fl">
+    <a href="mailto:evgeny@chernikov.tech">evgeny@chernikov.tech</a>
+    <a href="https://www.linkedin.com/in/evgenychernikov" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    <a href="https://www.instagram.com/evgeny_chernikov" target="_blank" rel="noopener">Instagram &#8599;</a>
+    <a href="https://caworks.co" target="_blank" rel="noopener">CAworks &#8599;</a>
+  </div>
+  <div class="col">
+    <span>&copy; 2026 Evgeny Chernikov</span>
+    <span>Graphite — pure monochrome</span>
+    <span>chernikov.tech</span>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
